@@ -1,7 +1,3 @@
-# Please edit the object below. Lines beginning with a '#' will be ignored,
-# and an empty file will abort the edit. If an error occurs while saving this file will be
-# reopened with the relevant failures.
-#
 apiVersion: v1
 kind: Template
 labels:
@@ -26,14 +22,10 @@ metadata:
     template.openshift.io/long-description: This template provides a standalone Redis
       server.  The data is not stored on persistent storage, so any restart of the
       service will result in all data being lost.
-    template.openshift.io/provider-display-name: Red Hat, Inc.
-    template.openshift.io/support-url: https://access.redhat.com
-  creationTimestamp: 2017-03-29T19:23:52Z
+    template.openshift.io/provider-display-name: SDP Team
+    template.openshift.io/support-url: https://svcmgr.cdc.gov/
+  creationTimestamp: null
   name: redis-ephemeral
-  namespace: openshift
-  resourceVersion: "12588083"
-  selfLink: /oapi/v1/namespaces/openshift/templates/redis-ephemeral
-  uid: 3e2d4a2e-14b5-11e7-93e6-1866da630de9
 objects:
 - apiVersion: v1
   kind: Service
