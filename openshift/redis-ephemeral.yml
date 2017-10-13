@@ -95,7 +95,7 @@ objects:
             privileged: false
           terminationMessagePath: /dev/termination-log
           volumeMounts:
-          - mountPath: /var/lib/redis/data
+          - mountPath: /data
             name: ${DATABASE_SERVICE_NAME}-data
         dnsPolicy: ClusterFirst
         restartPolicy: Always
@@ -110,7 +110,7 @@ objects:
         - redis
         from:
           kind: ImageStreamTag
-          name: redis:${REDIS_VERSION}
+          name: ${REDIS_IMAGE}:${REDIS_VERSION}
           namespace: ${NAMESPACE}
         lastTriggeredImage: ""
       type: ImageChange
@@ -137,8 +137,12 @@ parameters:
   generate: expression
   name: REDIS_PASSWORD
   required: true
-- description: Version of Redis image to be used (3.2 or latest).
+- description: The name of the Redis imagestream to be used
+  displayName: Version of Redis Image
+  name: REDIS_IMAGE
+  value: ocp-redis
+- description: Version of Redis image to be used (4.0 or latest).
   displayName: Version of Redis Image
   name: REDIS_VERSION
   required: true
-  value: "3.2"
+  value: "4.0"
