@@ -18,11 +18,10 @@ spec:
       kind: ImageStreamTag
       name: "4.0.2"
     importPolicy: {}
-    name: "4.0"
+    name: "4.0.x"
   - annotations: null
     from:
       kind: DockerImage
       name: redis:latest
     importPolicy: {}
     name: latest
-

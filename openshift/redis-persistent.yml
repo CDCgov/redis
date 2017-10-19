@@ -159,4 +159,4 @@ parameters:
   displayName: Version of Redis Image
   name: REDIS_VERSION
   required: true
-  value: "4.0"
+  value: "4.0.x"
